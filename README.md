@@ -2,7 +2,9 @@
 
 A from-scratch [wgpu](https://wgpu.rs) app that runs in a web worker via WebAssembly, with a [Leptos](https://leptos.dev) frontend. No graphics code on the main thread: the worker owns an `OffscreenCanvas`, drives the render loop with `requestAnimationFrame`, and renders through WebGPU. The Leptos app on the main thread only transfers the canvas and forwards events.
 
-This is the Leptos counterpart to [webgpu-worker](https://github.com/matthewjberger/webgpu-worker), which used a TypeScript frontend and Comlink. Here both sides are Rust: the page and the worker exchange messages defined once in a shared `protocol` crate, serialized over `postMessage`.
+![A lit, spinning cube rendered by wgpu inside a web worker, with the Leptos control panel reporting the worker scope, fps, and a picked face marker.](docs/screenshot.png)
+
+[webgpu-worker](https://github.com/matthewjberger/webgpu-worker) built this with a TypeScript frontend and Comlink. This version is Rust on both sides: the page and the worker exchange messages defined once in a shared `protocol` crate, serialized over `postMessage`.
 
 ## Workspace
 
