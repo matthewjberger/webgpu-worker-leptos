@@ -4,7 +4,7 @@ A from-scratch [wgpu](https://wgpu.rs) app that runs in a web worker via WebAsse
 
 ![A lit, spinning cube rendered by wgpu inside a web worker, with the Leptos control panel reporting the worker scope, fps, and a picked face marker.](docs/screenshot.png)
 
-[webgpu-worker](https://github.com/matthewjberger/webgpu-worker) built this with a TypeScript frontend and Comlink. This version is Rust on both sides: the page and the worker exchange messages defined once in a shared `protocol` crate, serialized over `postMessage`.
+[webgpu-worker](https://github.com/matthewjberger/webgpu-worker) built this with a TypeScript frontend and Comlink. This version is Rust on both sides: the page and the worker exchange messages defined once in a shared `protocol` crate, serialized over `postMessage`. [bevy-worker-leptos](https://github.com/matthewjberger/bevy-worker-leptos) uses this exact frontend and `protocol` setup but runs the full Bevy engine in the worker instead of a hand-written wgpu renderer.
 
 ## Workspace
 
